@@ -14,6 +14,8 @@ def index():
 
     students = hackbright.list_student()
 
+    print(projects)
+
     return render_template('homepage.html', projects=projects, students=students)
 
 @app.route("/student-search")

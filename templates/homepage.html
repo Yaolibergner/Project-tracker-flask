@@ -7,14 +7,14 @@
 	<ul>
 	<h1>Student list</h1>
 	{% for student in students %}
-	<li> {{ student }} </li>
+	<li> {{ student[0] }} {{ student[1] }} </li>
 	{% endfor %}
 	</ul>
 
-	<ul>
 	<h1>Project list</h1>
+	<ul>
 	{% for project in projects %}
-	<li> {{ project }} </li>
+	<li><a href="/project?project={{ project[0] }}">{{ project[0] }}</a></li>
 	{% endfor %}
 	</ul>
 
