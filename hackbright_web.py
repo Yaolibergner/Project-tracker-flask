@@ -22,8 +22,7 @@ def get_student():
 
     projects = hackbright.get_grades_by_github(github)
    
-
-    html = render_template('student_info.html', first = first, last = last, github = github, projects = projects)
+    html = render_template('student_info.html', first=first, last=last, github=github, projects=projects)
 
     return html
 
@@ -45,6 +44,21 @@ def student_add():
     hackbright.make_new_student(first_name, last_name, github)
 
     return render_template('confirmation_add.html', first_name = first_name, last_name = last_name, github = github)
+
+@app.route("/project-search")
+def project_search():
+    """Show the form to search for a project"""
+
+    return render_template("project_search.html")
+
+@app.route('/project')
+def show_project():
+    """Show project information."""
+
+    title = request.args.get('project')
+    project = hackbright.get_project_by_title(title)
+
+    return render_template("project.html", project=project)
 
 if __name__ == "__main__":
     hackbright.connect_to_db(app)
