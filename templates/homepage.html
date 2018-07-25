@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+</head>
+<body>
+	<ul>
+	<h1>Student list</h1>
+	{% for student in students %}
+	<li> {{ student }} </li>
+	{% endfor %}
+	</ul>
+
+	<ul>
+	<h1>Project list</h1>
+	{% for project in projects %}
+	<li> {{ project }} </li>
+	{% endfor %}
+	</ul>
+
+</body>
+</html>

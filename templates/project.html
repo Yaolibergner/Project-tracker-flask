@@ -6,11 +6,21 @@
 <body>
 
     <ul>
-    	<li>Project Title: {{ project[0] }} </li>
+    	<h1>Project Title: {{ project[0] }} </h1>
 
         <li>Project Description: {{ project[1] }} </li>
 
         <li>Project Score: {{ project[2] }}</li>
+
+        {% for tpl in github_grade %}
+
+        <li>The student with the github <a href="/student?github={{ tpl[0] }}">{{ tpl[0] }}</a> got a grade of {{ tpl[1] }} for this project.</li>
+
+        {% endfor %}
+
     </ul> 
+
+   
+
 </body>
 </html>
